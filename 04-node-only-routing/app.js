@@ -1,4 +1,4 @@
-var url = require('url');
+var url = require('url'); // gets helper url functions
 var fs = require('fs');
 
 function renderHTML(path, response) {
@@ -17,15 +17,15 @@ module.exports = {
   handleRequest: function(request, response) {
       response.writeHead(200, {'Content-Type': 'text/html'});
 
-      var path = url.parse(request.url).pathname;
+      var path = url.parse(request.url).pathname; // ex of url function, gets pathname that user enters
       switch (path) {
-          case '/':
+          case '/': // base case should go to root or index
               renderHTML('./index.html', response);
               break;
-          case '/login':
+          case '/login': // case should go to login
               renderHTML('./login.html', response);
               break;
-          default:
+          default: // deafult is a 404, or path undefined
               response.writeHead(404);
               response.write('Route not defined');
               response.end();
