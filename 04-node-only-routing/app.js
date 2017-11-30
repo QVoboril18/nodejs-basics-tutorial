@@ -1,6 +1,6 @@
 var url = require('url'); // gets helper url functions
 var fs = require('fs');
-
+// function that renders the html and takes in different html files to style the website
 function renderHTML(path, response) {
     fs.readFile(path, null, function(error, data) {
         if (error) {
@@ -12,7 +12,7 @@ function renderHTML(path, response) {
         response.end();
     });
 }
-
+// function that talks about different branches
 module.exports = {
   handleRequest: function(request, response) {
       response.writeHead(200, {'Content-Type': 'text/html'});

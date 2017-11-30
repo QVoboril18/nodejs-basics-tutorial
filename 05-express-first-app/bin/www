@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+// this file sets up server and what port you listen to.
 /**
  * Module dependencies.
  */
