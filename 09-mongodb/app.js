@@ -5,7 +5,19 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var hbs = require('express-handlebars');
+/*
 
+M O N G O D B    N O T E S   G E N E R A L
+You can download mongoDB at mongoDB.org
+
+./ mongo to boot mongoDB server in command prompt
+
+type DB to see what database you are in.
+(Default will return test
+
+DB.data.insert({ "username" : "max"}) this inserts and places in the Data package thing what is found inside.
+
+ */
 var routes = require('./routes/index');
 
 var app = express();

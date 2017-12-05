@@ -2,8 +2,11 @@ var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb').MongoClient;
 var objectId = require('mongodb').ObjectID;
+// assert is a default mongodb var and package
 var assert = require('assert');
 
+
+// this sets link and port
 var url = 'mongodb://localhost:27017/test';
 
 /* GET home page. */
@@ -35,7 +38,8 @@ router.post('/insert', function(req, res, next) {
 
   mongo.connect(url, function(err, db) {
     assert.equal(null, err);
-    db.collection('user-data').insertOne(item, function(err, result) {
+    // this names a db that is called db, and inserts into it an item and runs a function in lines below
+    db.collection('user-data').insertOne(item,/*calls back if has error if not send result*/ function(err, result) {
       assert.equal(null, err);
       console.log('Item inserted');
       db.close();
